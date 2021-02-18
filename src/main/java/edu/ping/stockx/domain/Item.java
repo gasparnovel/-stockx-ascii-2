@@ -4,19 +4,19 @@ import java.util.List;
 
 public interface Item {
 
-    int getBid();
-
     int getAsk();
+
+    int getBid();
 
     int getSale();
 
-    void add(Offer sneaker);
+    void add(Offer offer);
 
-    void setBid(int bid);
+    List<Offer> offers();
 
     void setAsk(int ask);
 
+    void setBid(int bid);
+
     void setSale(int sale);
-
-
 }

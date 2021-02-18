@@ -3,7 +3,10 @@ package edu.ping.stockx;
 import edu.ping.stockx.domain.Ask;
 import edu.ping.stockx.domain.Bid;
 import edu.ping.stockx.domain.Item;
+import edu.ping.stockx.domain.Offer;
 import edu.ping.stockx.domain.Sneaker;
+import edu.ping.stockx.domain.criteria.Bids;
+import edu.ping.stockx.domain.criteria.Criteria;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo las cosas a la manera
@@ -24,9 +27,9 @@ public class Stockx {
     public static void main(String[] args) {
 
         /**
-         * Crear la zapatilla 
+         * Crear la zapatilla
          * y printar sus datos.
-         * 
+         *
          * Lee la funcion draw() del main
          * para conocer que propiedades
          * de la zapatilla han de printarse.
@@ -47,7 +50,7 @@ public class Stockx {
         sneaker.add(new Bid("9.5", 479));
         sneaker.add(new Bid("13", 338));
         sneaker.add(new Bid("9.5", 480));
-            
+
         /**
          * Crear asks
          * y añadirlas a la zapatilla
@@ -63,13 +66,19 @@ public class Stockx {
 
         /**
          * Crear el filtro "Bids" que filtra
-         * solo las bids de entre las 
-         * offers de la zapatilla. 
+         * solo las bids de entre las
+         * offers de la zapatilla.
          */
 
         Criteria bids = new Bids();
         System.out.println("\n\t\t All BIDS");
         bids.checkCriteria(sneaker).forEach(System.out::print);
+
+        /**
+         * Crea el filtro "Asks" que filtra
+         * solo las asks de entre las
+         * offers de la zapatilla.
+         */
     }
 
     public static String draw(Item sneaker) {

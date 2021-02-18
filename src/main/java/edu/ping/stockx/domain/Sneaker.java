@@ -11,7 +11,7 @@ public class Sneaker implements Item{
     private int ask;
     private int bid;
 
-	private List<Offer> sneaker = new ArrayList<Offer>();
+	private final List<Offer> offers = new ArrayList<Offer>();
 
 
     public Sneaker(String style, String name) {
@@ -19,42 +19,45 @@ public class Sneaker implements Item{
         this.name = name;
     }
 
-    public Object getStyle() {
+    public String getStyle() {
         return this.style;
     }
 
-    public Object getName() {
+    public String getName() {
         return this.name;
     }
 
     public int getSale() {
-        return this.sale;
+        return sale;
+    }
+
+    public int getAsk() {
+        return ask;
+    }
+
+    public int getBid() {
+        return bid;
     }
 
     public void setSale(int sale) {
         this.sale = sale;
     }
 
-    public int getAsk() {
-        return this.ask;
-    }
-
     public void setAsk(int ask) {
         this.ask = ask;
-    }
-
-    public int getBid() {
-        return this.bid;
     }
 
     public void setBid(int bid) {
         this.bid = bid;
     }
 
-    public List<Offer> offers(){
-        return this.sneaker;
+    public void add(Offer offer) {
+        this.offers.add(offer);
     }
 
+    public List<Offer> offers() {
+        return this.offers;
+    }
 
     @Override
     public String toString() {
@@ -62,21 +65,6 @@ public class Sneaker implements Item{
             "                " + getStyle();
     }
 
-    public void add(Bid bid) {
-        sneaker.add(bid);
-    }
-
-    public void add(Ask ask) {
-        sneaker.add(ask);
-    }
-
-    public void add(Sale sale) {
-        sneaker.add(sale);
-    }
-
-    @Override
-    public void add(Offer sneaker) {
-        // TODO Auto-generated method stub
-
-    }
+    
 }
+
