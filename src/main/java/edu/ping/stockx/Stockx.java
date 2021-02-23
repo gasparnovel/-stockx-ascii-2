@@ -1,5 +1,6 @@
 package edu.ping.stockx;
 
+import edu.ping.stockx.domain.criteria.Asks;
 import edu.ping.stockx.domain.criteria.Bids;
 import edu.ping.stockx.domain.criteria.Criteria;
 import edu.ping.stockx.domain.item.Item;
@@ -78,6 +79,10 @@ public class Stockx {
          * solo las asks de entre las
          * offers de la zapatilla.
          */
+        
+        Criteria asks = new Asks();
+        System.out.println("\n\t\t All ASKS");
+        asks.checkCriteria(sneaker).forEach(System.out::print);
     }
 
     public static String draw(Item sneaker) {
