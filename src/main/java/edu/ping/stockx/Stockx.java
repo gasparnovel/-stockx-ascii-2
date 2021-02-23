@@ -7,11 +7,13 @@ import edu.ping.stockx.domain.criteria.Bids;
 import edu.ping.stockx.domain.criteria.Criteria;
 import edu.ping.stockx.domain.criteria.MaxBid;
 import edu.ping.stockx.domain.criteria.MinAsk;
+import edu.ping.stockx.domain.criteria.Sales;
 import edu.ping.stockx.domain.item.Item;
 import edu.ping.stockx.domain.item.Sneaker;
 import edu.ping.stockx.domain.offer.Ask;
 import edu.ping.stockx.domain.offer.Bid;
 import edu.ping.stockx.domain.offer.Offer;
+import edu.ping.stockx.domain.offer.Sale;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo las cosas a la manera
@@ -124,6 +126,31 @@ public class Stockx {
         List<Offer> minimum = minAsk.checkCriteria(sneaker);
         sneaker.setAsk(minimum.isEmpty()? 0 : minimum.get(0).value());
         System.out.println(Stockx.draw(sneaker));
+
+        /**
+         * Añade ventas (sales) de 
+         * una zapatilla a sus offers.
+         * Las ventas se añaden segun fecha
+         * en la que se producen, de mas antigua
+         * a mas reciente.
+         */
+
+        Sale sale = new Sale("6", 356);
+        sneaker.add(sale);
+        sneaker.add(new Sale("9.5", 352));
+        sneaker.add(new Sale("9.5", 404));
+        sneaker.add(new Sale("13", 360));
+        sneaker.add(new Sale("13", 372));
+
+        /**
+         * Crear el filtro "Sales" que filtra
+         * solo las ventas /sales de entre las 
+         * offers de la zapatilla.
+         */
+
+        Criteria sales = new Sales();
+        System.out.println("\n\t\t All SALES");
+        sales.checkCriteria(sneaker).forEach(System.out::print);
     }
 
     public static String draw(Item sneaker) {
