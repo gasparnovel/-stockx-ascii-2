@@ -6,7 +6,8 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.ping.stockx.domain.Ask;
+import edu.ping.stockx.domain.offer.Ask;
+
 
 public class AskTest {
     

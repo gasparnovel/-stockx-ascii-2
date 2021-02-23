@@ -7,7 +7,8 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.ping.stockx.domain.Sneaker;
+import edu.ping.stockx.domain.item.Sneaker;
+
 
 public class SneackerTest {
     

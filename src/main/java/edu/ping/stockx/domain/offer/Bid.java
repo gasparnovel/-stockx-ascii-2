@@ -1,4 +1,4 @@
-package edu.ping.stockx.domain;
+package edu.ping.stockx.domain.offer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +30,8 @@ public class Bid implements Offer {
 
     @Override
     public String toString() {
-        return "                "  + size() + "      " + value() + "\n";
+        return "Size: " + size() + "\n" +
+            "Price: " + value() + "\n" + "\n";
     }
+
 }

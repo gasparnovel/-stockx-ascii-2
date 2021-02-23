@@ -1,7 +1,9 @@
-package edu.ping.stockx.domain;
+package edu.ping.stockx.domain.item;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import edu.ping.stockx.domain.offer.Offer;
 
 public class Sneaker implements Item{
 
@@ -61,10 +63,8 @@ public class Sneaker implements Item{
 
     @Override
     public String toString() {
-        return  getName() + "\n" +
-            "                " + getStyle();
-    }
-
-    
+        return "Name: " + getName() + "\n" +
+            "Style: " + getStyle() + "\n";
+        }
 }
 

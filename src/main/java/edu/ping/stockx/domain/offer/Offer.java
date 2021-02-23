@@ -1,4 +1,4 @@
-package edu.ping.stockx.domain;
+package edu.ping.stockx.domain.offer;
 
 public interface Offer {
 

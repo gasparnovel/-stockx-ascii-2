@@ -1,12 +1,11 @@
 package edu.ping.stockx;
 
-import edu.ping.stockx.domain.Ask;
-import edu.ping.stockx.domain.Bid;
-import edu.ping.stockx.domain.Item;
-import edu.ping.stockx.domain.Offer;
-import edu.ping.stockx.domain.Sneaker;
 import edu.ping.stockx.domain.criteria.Bids;
 import edu.ping.stockx.domain.criteria.Criteria;
+import edu.ping.stockx.domain.item.Item;
+import edu.ping.stockx.domain.item.Sneaker;
+import edu.ping.stockx.domain.offer.Ask;
+import edu.ping.stockx.domain.offer.Bid;
 
 /**
  * StockX nació en Detroit, y allí siguen haciendo las cosas a la manera

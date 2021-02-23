@@ -6,7 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 
-import edu.ping.stockx.domain.Sale;
+import edu.ping.stockx.domain.offer.Sale;
 
 public class SaleTest {
     

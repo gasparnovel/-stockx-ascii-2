@@ -1,6 +1,8 @@
-package edu.ping.stockx.domain;
+package edu.ping.stockx.domain.item;
 
 import java.util.List;
+
+import edu.ping.stockx.domain.offer.Offer;
 
 public interface Item {
 
