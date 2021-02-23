@@ -6,6 +6,7 @@ import edu.ping.stockx.domain.criteria.Asks;
 import edu.ping.stockx.domain.criteria.Bids;
 import edu.ping.stockx.domain.criteria.Criteria;
 import edu.ping.stockx.domain.criteria.MaxBid;
+import edu.ping.stockx.domain.criteria.MinAsk;
 import edu.ping.stockx.domain.item.Item;
 import edu.ping.stockx.domain.item.Sneaker;
 import edu.ping.stockx.domain.offer.Ask;
@@ -104,6 +105,24 @@ public class Stockx {
         Criteria maxBid = new MaxBid();
         List<Offer> maximum = maxBid.checkCriteria(sneaker);
         sneaker.setBid(maximum.isEmpty()? 0 : maximum.get(0).value());
+        System.out.println(Stockx.draw(sneaker));
+
+        /**
+         * Muestra la ask minima
+         * de la zapatilla. 
+         * 
+         * Crea el filtro MinAsk que filtra
+         * el minimo de las asks de la zapatilla.
+         * Devuelve la ask minima como unico
+         * elemento de una lista de offers.
+         * 
+         * Guarda esta ask minima en la propiedad
+         * ask de sneaker.
+         */
+
+        Criteria minAsk = new MinAsk();
+        List<Offer> minimum = minAsk.checkCriteria(sneaker);
+        sneaker.setAsk(minimum.isEmpty()? 0 : minimum.get(0).value());
         System.out.println(Stockx.draw(sneaker));
     }
 
