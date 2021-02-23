@@ -5,6 +5,7 @@ import java.util.List;
 import edu.ping.stockx.domain.criteria.Asks;
 import edu.ping.stockx.domain.criteria.Bids;
 import edu.ping.stockx.domain.criteria.Criteria;
+import edu.ping.stockx.domain.criteria.LastSale;
 import edu.ping.stockx.domain.criteria.MaxBid;
 import edu.ping.stockx.domain.criteria.MinAsk;
 import edu.ping.stockx.domain.criteria.Sales;
@@ -151,6 +152,19 @@ public class Stockx {
         Criteria sales = new Sales();
         System.out.println("\n\t\t All SALES");
         sales.checkCriteria(sneaker).forEach(System.out::print);
+
+        /**
+         * Crea un filtro que devuelva
+         * la ULTIMA de las ventas (que 
+         * es la ultima en ser incluida
+         * en sneaker).
+         */
+        
+        Criteria lastSale = new LastSale();
+        
+        List<Offer> actualSale = lastSale.checkCriteria(sneaker);
+        sneaker.setSale(actualSale.isEmpty()? 0 : actualSale.get(0).value());
+        System.out.println(Stockx.draw(sneaker));
     }
 
     public static String draw(Item sneaker) {
